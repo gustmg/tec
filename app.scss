@@ -1,0 +1,80 @@
+$mdc-theme-primary: #FFF;
+$mdc-theme-secondary: #0E578C;
+$mdc-theme-background: #fff;
+
+@import "@material/button/mdc-button";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/typography/mdc-typography";
+
+.foo-button {
+  @include mdc-button-ink-color(teal);
+  @include mdc-states(teal);
+}
+
+html, body{
+	height: 100%;
+}
+
+//HELPERS
+
+//Margins
+
+.no-margin{
+	margin: 0 !important;
+}
+
+//Paddings
+.logo-top-padding{
+	padding-top: 3px !important;
+}
+
+//Sizes
+.full-height{
+	height: 100% !important;
+}
+
+//Alignments
+.valign{
+	vertical-align: middle;
+}
+
+
+//Colors
+
+.transparent-bg{
+	background-color: transparent !important;
+}
+
+.white-text{
+	color: white;
+}
+
+//ITEMS
+
+.menu{
+	opacity: 0;
+	height: 0;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+	z-index: 1;
+	background-color: #030711;
+	opacity: 1;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.menu-list{
+	list-style: none;
+	padding: 0;
+}
+
+.logo-img{
+	position: fixed;
+	left: calc(50% - 97.5px);
+	top: calc(50% - 101.5px);
+	opacity: 0;
+	z-index: 999;
+}

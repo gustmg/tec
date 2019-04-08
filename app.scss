@@ -7,6 +7,7 @@ $mdc-theme-background: #fff;
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/typography/mdc-typography";
 @import "@material/textfield/mdc-text-field";
+@import "@material/elevation/mdc-elevation";
 @import "material-components-web/material-components-web";
 
 html, body{
@@ -23,7 +24,28 @@ body{
 }
 
 .gradient-bg{
-	background: blue !important;
+	background: linear-gradient(1deg, #11214b, #005b99);
+	background-size: 400% 400%;
+
+	-webkit-animation: Footer 8s ease infinite;
+	-moz-animation: Footer 8s ease infinite;
+	animation: Footer 8s ease infinite;
+
+	@-webkit-keyframes Footer {
+	    0%{background-position:52% 0%}
+	    50%{background-position:49% 100%}
+	    100%{background-position:52% 0%}
+	}
+	@-moz-keyframes Footer {
+	    0%{background-position:52% 0%}
+	    50%{background-position:49% 100%}
+	    100%{background-position:52% 0%}
+	}
+	@keyframes Footer { 
+	    0%{background-position:52% 0%}
+	    50%{background-position:49% 100%}
+	    100%{background-position:52% 0%}
+	}
 }
 
 #footer-scene{
@@ -67,6 +89,10 @@ body{
 	height: calc(100% / 5);
 }
 
+.section-half-height{
+	height: calc(50% / 5);
+}
+
 //Alignments
 .valign{
 	vertical-align: middle;
@@ -77,6 +103,7 @@ body{
 
 .transparent-bg{
 	background-color: transparent !important;
+	box-shadow: 0 !important;
 }
 
 .white-text{
@@ -86,8 +113,8 @@ body{
 //ITEMS
 
 #printer-scene-text{
-	opacity: 1;
-	transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+	opacity: 0;
+	transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #computer-scene-text{

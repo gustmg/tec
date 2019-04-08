@@ -6,6 +6,18 @@ const mdc = require('material-components-web');
 mdc.autoInit();
 var controller = new ScrollMagic.Controller();
 
+//Header Shadow Handler
+$(window).scroll(function() {     
+    var scroll = $(window).scrollTop();
+    if (scroll > 0) {
+        $("header").addClass("mdc-elevation--z4");
+    }
+    else {
+        $("header").removeClass("mdc-elevation--z4");
+    }
+});
+
+
 var computerScene = new ScrollMagic.Scene({
 	triggerElement: '#computer-scene-text',
 	triggerHook: 0.1
@@ -15,16 +27,17 @@ var computerScene = new ScrollMagic.Scene({
 .addTo(controller);
 
 
-var scene = new ScrollMagic.Scene({
+var printerScene = new ScrollMagic.Scene({
 	triggerElement: '#printer-scene-text',
-	triggerHook: 0.6
+	duration: '90%',
+	triggerHook: 1
 })
-.setClassToggle('#bg-img', 'printer-bg')
-// .addIndicators({
-// 	name: 'Print-scene',
-// 	colorTrigger: 'red',
-// 	colorStart: '#75C695'
-// })
+.setClassToggle('#printer-scene-text', 'fade-in')
+.addIndicators({
+	name: 'Print-scene',
+	colorTrigger: 'red',
+	colorStart: '#75C695'
+})
 .addTo(controller);
 
 var footerScene = new ScrollMagic.Scene({
@@ -32,6 +45,42 @@ var footerScene = new ScrollMagic.Scene({
 	triggerHook: 0.8
 })
 .setClassToggle('#footer-scene', 'fade-in')
+// .addIndicators({
+// 	name: 'Footer-scene',
+// 	colorTrigger: 'red',
+// 	colorStart: '#75C695'
+// })
+.addTo(controller);
+
+var transparenteaderScene = new ScrollMagic.Scene({
+	triggerElement: '#footer-scene',
+	triggerHook: 0.8
+})
+.setClassToggle('header', 'transparent-bg')
+// .addIndicators({
+// 	name: 'Footer-scene',
+// 	colorTrigger: 'red',
+// 	colorStart: '#75C695'
+// })
+.addTo(controller);
+
+var menuButtonsColorScene = new ScrollMagic.Scene({
+	triggerElement: '#footer-scene',
+	triggerHook: 0.05
+})
+.setClassToggle('.menu-button', 'mdc-theme--primary')
+// .addIndicators({
+// 	name: 'Footer-scene',
+// 	colorTrigger: 'red',
+// 	colorStart: '#75C695'
+// })
+.addTo(controller);
+
+var menuButtonsColorScene = new ScrollMagic.Scene({
+	triggerElement: '#footer-scene',
+	triggerHook: 0.05
+})
+.setClassToggle('header', 'mdc-theme--primary')
 // .addIndicators({
 // 	name: 'Footer-scene',
 // 	colorTrigger: 'red',
